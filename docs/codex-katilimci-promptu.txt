@@ -1,0 +1,70 @@
+BilgiEdu mobil oyun atolyesine katiliyorum. Mevcut React Native CLI projesinde
+bana ayrilan alani gelistirmeni istiyorum.
+
+GITHUB_KULLANICI_ADIM: [KENDI_GITHUB_KULLANICI_ADIM]
+KATILIMCI_KODUM: [EGITMENIN_ATADIGI_KOD]
+GORUNEN_ADIM: [ASCII_ADIM]
+OYUN_FIKRIM: [TEK_CUMLEYLE_BASIT_OYUN_FIKRIM]
+
+Once:
+- Yukaridaki alanlar doldurulmadiysa eksik bilgiyi sor. Kod veya kullanici adi uydurma.
+- Proje kokundeki AGENTS.md ile src/participants/KATILIMCI_KODUM/AGENTS.md
+  dosyalarini oku. src/shared/types.ts ve src/shared/ui.tsx dosyalarini sadece oku.
+- git status --short, git branch --show-current ve git remote -v ile durumu kontrol et.
+- Bana atanmis klasorun varligini ve workshop/ownership.json dosyasinda
+  GitHub kullanici adimin bu kodla eslestigini dogrula.
+- Klasor veya sahiplik kaydi eksik/uyusmazsa dosya olusturma; egitmene iletmem
+  gereken sorunu acikla. Kayit dosyasini kendin degistirme.
+- Branch participant/KATILIMCI_KODUM olmali. Repo temizse ve bu branch yoksa
+  olustur. Baska bir branch'teki kaydedilmemis degisiklikleri tasima, silme,
+  resetleme veya otomatik stash yapma; durumu once bildir.
+
+Calisma sinirin:
+- Takip edilen dosyalardan sadece src/participants/KATILIMCI_KODUM/** icinde
+  degisiklik yap. Baska katilimcilarin alanlarini kullanma.
+- Kural dosyalarini, App.tsx, src/core, src/shared, src/generated, workshop,
+  scripts, .github, android, ios, package.json ve kilit dosyalarini elle degistirme.
+- Yeni paket ekleme veya paket surumu degistirme. Var olan React Native
+  bilesenlerini ve ortak UI'yi kullan. Expo'ya donusturme.
+- Kendi alanindaki participant.json dosyasinin id degerini koru; name,
+  gameTitle ve accent alanlarini duzenleyebilirsin.
+- Baska katilimcinin modulunu import etme. Yerel kendi modullerini ve src/shared
+  arayuzunu kullan. Yeni dosya/gorsel gerekiyorsa kendi klasorunde tut.
+- Tum yeni metinler, dosya adlari ve yorumlar ASCII olmali; Turkce karakter kullanma.
+- Anahtar, sifre, hesap, reklam, satin alma, backend veya yeni servis ekleme.
+- Standart kurulum/derleme komutlarinin urettigi Git tarafindan ignore edilen
+  dosyalar normaldir; bunlari commit etme. Ortak takipli dosyalarda beklenmedik
+  degisiklik olursa uzerine yazma veya kontrolsuz geri alma; bildir.
+
+Yapilacak is:
+1. Kendi oyun ana sayfami tamamla: oyun adi, kisa aciklama ve Oyna butonu.
+2. Seviye secimini hazirla: en az 3 secilebilir seviye ve calisan geri donus.
+3. Oyun fikrimi basit, oynanabilir bir sahneye donustur. Anlasilir kontrol,
+   skor/ilerleme, bitis durumu ve yeniden baslatma olsun.
+4. Mevcut ParticipantScreenProps sozlesmesini koru. home, levels, game, level,
+   onOpenLevels, onPlayLevel, onBack ve onExit akislarini kullan.
+5. Oyun dongusunu sadece game asamasinda calistir. screen veya level degistiginde
+   sayaclari, animasyonlari ve abonelikleri temizle; yeni seviyeyi sifirdan baslat.
+6. Dokunma alanlari okunakli ve yeterli buyuklukte olsun; SafeArea'yi koru.
+   Tasarim kararlarini oyun fikrime gore kendin ver ve uygulamayi tamamla.
+
+Dogrulama ve teslim:
+- Gerekiyorsa npm ci calistir; kilit dosyasini degistirme. Ardindan npm run check
+  calistir. Bu komutun ignore edilen katilimci kaydini otomatik uretmesi normaldir.
+- Hazir bir emulator/simulator varsa yerel gelistirme surumunde kendi adimdan
+  ana sayfa -> seviyeler -> oyun -> geri donus akisini dene. Ortam hazir degilse
+  bunu acikca belirt; cihaz testi yaptigini soyleme. Ortak native dosyalari degistirme.
+- git diff --name-only ile degisen takipli dosyalari kontrol et. Kapsamim disindaki
+  degisiklikleri teslimata ekleme; kontrolu veya testleri gecmek icin kurallari gevsetme.
+- Yalniz kendi klasorumu git add -- src/participants/KATILIMCI_KODUM ile stage et.
+  git diff --cached --name-only sonucunun da ayni sinirda kaldigini dogrula.
+- Degisiklikleri commit et. origin adresinin kendi forkuma ait oldugunu dogrula;
+  yalniz participant/KATILIMCI_KODUM branch'ini kendi forkuma push et.
+- Yetkili GitHub hesabinin yukaridaki kullanici adim oldugunu dogrulayabiliyorsan,
+  cagdaseksi/BilgiEdu:main hedefli bir PR ac. Oturum/yetki yoksa kodu koru ve
+  yapacagim manuel push/PR adimlarini ver. Yeni erisim anahtari olusturma.
+- main'e veya upstream'e push etme, force push yapma, PR merge etme.
+- Sonuc olarak degisen dosyalari, calisan ozellikleri, kontrol sonuclarini,
+  yapilamayan dogrulamalari ve varsa PR baglantisini kisa sekilde bildir.
+
+Sadece plan verme; bu sinirlar icinde calisan sonucu olustur.

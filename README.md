@@ -3,6 +3,12 @@
 A minimal React Native Community CLI app for a 50-minute AI mobile game workshop.
 React Native 0.86, React 19, TypeScript, Hermes. No Expo dependency.
 
+## Atolye katilimcilari
+
+- [Indirme, kurulum ve PR adimlari](docs/katilimci-rehberi.md)
+- [Kopyalanacak Codex promptu](docs/codex-katilimci-promptu.txt)
+- [Egitmen icin kayit ve teslim rehberi](docs/egitmen-rehberi.md)
+
 ## Start
 
 Requires Node 22.11+, Java 17 and Android SDK, or Xcode and CocoaPods.
@@ -59,13 +65,9 @@ adds the GitHub login to the trusted ownership roster.
 
 ## Participant prompt
 
-```text
-Read AGENTS.md and src/participants/<slug>/AGENTS.md.
-Work only in src/participants/<slug> on branch participant/<slug>.
-Design my home, level selection and game scene in Screen.tsx.
-Do not change dependencies, App.tsx, shared code or other participants.
-Use ASCII text. Run npm run check. Do not push to main or merge.
-```
+Use the [participant prompt](docs/codex-katilimci-promptu.txt). Replace its four
+identity and game fields before pasting it into Codex. The maintainer must
+register the participant's GitHub login and directory before they begin.
 
 ## Checks
 
