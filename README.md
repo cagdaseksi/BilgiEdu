@@ -40,12 +40,12 @@ The trusted PR scope workflow runs code from the base branch, reads the PR autho
 and checks both old and new paths for renamed files. Its roster is
 `workshop/ownership.json`. Updating a branch name does not confer ownership.
 
-IMPORTANT: GitHub Free does not enforce branch protection on private repositories.
-Until enforceable protection is active, do not give participants write access
-to the upstream repository. Distribute a source snapshot to independent clones
-or repositories; only the maintainer integrates submitted participant folders.
-For public repositories, use read-only upstream access, forks, PRs and required
-scope checks. AGENTS.md is guidance, not a filesystem security sandbox.
+The upstream repository is public with protected main. Both participant-scope
+and app-checks must pass, the branch must be up to date, and a maintainer review
+is required. Force pushes and deletion are disabled. Participants use forks;
+no upstream write access is needed. The repository owner retains administrative
+access for instructor-managed releases. AGENTS.md is guidance, not a filesystem
+security sandbox. Never share the instructor's GitHub credentials with students.
 
 ## Maintainer: add a participant
 

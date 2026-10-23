@@ -29,11 +29,11 @@ if (
 }
 mkdirSync(target, { recursive: true });
 const screen = readFileSync(
-  join(root, 'src/participants/cagdas/Screen.tsx'),
+  join(root, 'workshop/template/Screen.tsx.template'),
   'utf8',
 )
-  .replaceAll('CAGDAS', slug.toUpperCase())
-  .replaceAll('Cagdas', name);
+  .replaceAll('{{SLUG}}', slug.toUpperCase())
+  .replaceAll('{{NAME}}', name);
 writeFileSync(join(target, 'Screen.tsx'), screen);
 writeFileSync(
   join(target, 'participant.json'),

@@ -19,8 +19,9 @@
     "check": "npm run typecheck && npm run lint && npm test -- --runInBand && npm run test:scope",
     "android:release": "cd android && ./gradlew bundleRelease assembleRelease",
     "participant:add": "node scripts/add-participant.mjs",
-    "ios:archive": "npm run participants && node scripts/ios-release.mjs archive",
-    "ios:export": "node scripts/ios-release.mjs export"
+    "ios:archive": "npm run participants && node scripts/with-ios-signing.mjs archive",
+    "ios:export": "node scripts/with-ios-signing.mjs export",
+    "ios:upload": "node --env-file=.release.env scripts/upload-testflight.mjs"
   },
   "dependencies": {
     "react": "19.2.3",

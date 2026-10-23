@@ -39,6 +39,7 @@ pod install
 cd ..
 npm run ios:archive
 npm run ios:export
+npm run ios:upload
 ```
 
 Build and export helpers read local release settings. The initial release
@@ -52,3 +53,7 @@ available for testing until its processing and test-group status are verified.
 Native TestFlight/Play builds are snapshots. Participant source edits do not
 appear automatically on installed store builds. The maintainer integrates
 changes, increments the native build number, checks and uploads a new version.
+
+The signing helper uses a temporary keychain with the existing verified central
+certificate and private key. It restores the original keychain search list and
+deletes the temporary keychain when finished. Original keys are not changed.
