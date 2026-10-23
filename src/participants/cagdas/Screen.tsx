@@ -1,0 +1,50 @@
+import React from 'react';
+import { Text, View } from 'react-native';
+import type { ParticipantScreenProps } from '../../shared/types';
+import { Action, Page, styles } from '../../shared/ui';
+export default function Screen(props: ParticipantScreenProps) {
+  if (props.screen === 'home') {
+    return (
+      <Page title="Ilk Oyunum" eyebrow="CAGDAS / OYUN" onBack={props.onBack}>
+        <Text style={styles.body}>
+          Bu alan senin. Oyun fikrini, ana sayfani ve oyun sahneni burada
+          olustur.
+        </Text>
+        <Action title="Oyna" onPress={props.onOpenLevels} />
+        <Text style={styles.footer}>Cagdas tarafindan gelistiriliyor.</Text>
+      </Page>
+    );
+  }
+  if (props.screen === 'levels') {
+    return (
+      <Page
+        title="Bir seviye sec"
+        eyebrow="CAGDAS / SEVIYELER"
+        onBack={props.onBack}
+      >
+        <Text style={styles.body}>Oyunun bolumlerini burada tasarla.</Text>
+        {[1, 2, 3].map(level => (
+          <Action
+            key={level}
+            title={'Seviye ' + level}
+            onPress={() => props.onPlayLevel(level)}
+            secondary
+          />
+        ))}
+      </Page>
+    );
+  }
+  return (
+    <Page
+      title={'Seviye ' + props.level}
+      eyebrow="CAGDAS / OYUN SAHNESI"
+      onBack={props.onBack}
+    >
+      <View style={[styles.card, styles.placeholder]}>
+        <Text style={styles.cardTitle}>Sahne hazir.</Text>
+        <Text style={styles.detail}>Oyun mekanigini buraya ekle.</Text>
+      </View>
+      <Action title="Seviyelere don" onPress={props.onBack} secondary />
+    </Page>
+  );
+}
